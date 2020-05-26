@@ -18,15 +18,15 @@
         </tr>
     </thead>
     <tbody>
-{% for linux_node in groups['all'] %}
+{% for node1 in groups['all'] %}
         <tr>
-            <td>{{ hostvars[linux_node]['ansible_hostname'] }}</td>
-            <td>{{ hostvars[linux_node]['ansible_distribution'] }} {{hostvars[linux_node]['ansible_distribution_version']}}</td>
-            <td>{{ hostvars[linux_node]['ansible_env']['PATH'] }}</td>
-            <td>{{ hostvars[linux_node]['ansible_kernel'] }}</td>
-            <td>{{ hostvars[linux_node]['ansible_python_version'] }}</td>
-            <td>{{ hostvars[linux_node]['ansible_pkg_mgr'] }}</td>
-            <td>{{ hostvars[linux_node]['ansible_date_time']['date'] }}</td>
+            <td>{{ hostvars[node1]['ansible_hostname'] }}</td>
+            <td>{{ hostvars[node1]['ansible_distribution'] }} {{hostvars[node1]['ansible_distribution_version']}}</td>
+            <td>{{ hostvars[node1]['ansible_env']['PATH'] }}</td>
+            <td>{{ hostvars[node1]['ansible_kernel'] }}</td>
+            <td>{{ hostvars[node1]['ansible_python_version'] }}</td>
+            <td>{{ hostvars[node1]['ansible_pkg_mgr'] }}</td>
+            <td>{{ hostvars[node1]['ansible_date_time']['date'] }}</td>
 
         </tr>
 {% endfor %}
