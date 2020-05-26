@@ -1,4 +1,8 @@
 ---
+- name: get variables
+  debug:
+    var: hostvars[inventory_hostname]
+
 - name: create HTML report
   become: true
   template:
