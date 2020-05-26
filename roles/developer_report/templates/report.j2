@@ -18,15 +18,15 @@
         </tr>
     </thead>
     <tbody>
-{% for node1 in groups['all'] %}
+{% for host in groups['web'] %}
         <tr>
-            <td>{{ hostvars[node1]['ansible_hostname'] }}</td>
-            <td>{{ hostvars[node1]['ansible_distribution'] }} {{hostvars[node1]['ansible_distribution_version']}}</td>
-            <td>{{ hostvars[node1]['ansible_env']['PATH'] }}</td>
-            <td>{{ hostvars[node1]['ansible_kernel'] }}</td>
-            <td>{{ hostvars[node1]['ansible_python_version'] }}</td>
-            <td>{{ hostvars[node1]['ansible_pkg_mgr'] }}</td>
-            <td>{{ hostvars[node1]['ansible_date_time']['date'] }}</td>
+            <td>{{ hostvars[host]['ansible_hostname'] }}</td>
+            <td>{{ hostvars[host]['ansible_distribution'] }} {{hostvars[host]['ansible_distribution_version']}}</td>
+            <td>{{ hostvars[host]['ansible_env']['PATH'] }}</td>
+            <td>{{ hostvars[host]['ansible_kernel'] }}</td>
+            <td>{{ hostvars[host]['ansible_python_version'] }}</td>
+            <td>{{ hostvars[host]['ansible_pkg_mgr'] }}</td>
+            <td>{{ hostvars[host]['ansible_date_time']['date'] }}</td>
 
         </tr>
 {% endfor %}
