@@ -18,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-{% for linux_node in groups['all'] %}
+{% for linux_node in groups.all[1:] %}
         <tr>
             <td>{{ hostvars[linux_node]['ansible_facts']['ansible_hostname'] }}</td>
             <td>{{ hostvars[linux_node]['ansible_facts']['ansible_distribution'] }} {{hostvars[linux_node]['ansible_facts']['ansible_distribution_version']}}</td>
