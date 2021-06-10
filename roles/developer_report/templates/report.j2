@@ -18,15 +18,15 @@
         </tr>
     </thead>
     <tbody>
-{% for linux_node in groups.all[1:] %}
+{% for linux_node in groups.all[1:] if hostvars[linux_node]['ansible_hostname'] is defined %}
         <tr>
-            <td>{{ hostvars[linux_node]['ansible_facts']['ansible_hostname'] }}</td>
-            <td>{{ hostvars[linux_node]['ansible_facts']['ansible_distribution'] }} {{hostvars[linux_node]['ansible_facts']['ansible_distribution_version']}}</td>
-            <td>{{ hostvars[linux_node]['ansible_facts']['ansible_env']['PATH'] }}</td>
-            <td>{{ hostvars[linux_node]['ansible_facts']['ansible_kernel'] }}</td>
-            <td>{{ hostvars[linux_node]['ansible_facts']['ansible_python_version'] }}</td>
-            <td>{{ hostvars[linux_node]['ansible_facts']['ansible_pkg_mgr'] }}</td>
-            <td>{{ hostvars[linux_node]['ansible_facts']['ansible_date_time']['date'] }}</td>
+            <td>{{ hostvars[linux_node]['ansible_hostname'] }}</td>
+            <td>{{ hostvars[linux_node]['ansible_distribution'] }} {{hostvars[linux_node]['ansible_facts']['ansible_distribution_version']}}</td>
+            <td>{{ hostvars[linux_node]['ansible_env']['PATH'] }}</td>
+            <td>{{ hostvars[linux_node]['ansible_kernel'] }}</td>
+            <td>{{ hostvars[linux_node]['ansible_python_version'] }}</td>
+            <td>{{ hostvars[linux_node]['ansible_pkg_mgr'] }}</td>
+            <td>{{ hostvars[linux_node]['ansible_date_time']['date'] }}</td>
 
         </tr>
 {% endfor %}
