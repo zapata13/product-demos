@@ -1,7 +1,7 @@
 ---
 namespace: ansible
 name: product_demos
-version: 1.2.7
+version: 1.2.9
 readme: README.md
 
 authors:
@@ -38,7 +38,9 @@ build_ignore:
   - images
   - '*.tar.gz'
 
-dependencies: {}
+dependencies:
+  "awx.awx": "*"
+
 
 repository: http://github.com/ansible/product-demos
 documentation: http://github.com/ansible/product-demos
