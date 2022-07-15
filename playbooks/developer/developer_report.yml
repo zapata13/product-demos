@@ -1,10 +1,10 @@
 ---
 - name: grab linux facts
-  hosts: web
+  hosts: "{{ HOSTS | default('web') }}"
   gather_facts: true
 
 - name: build developer report
-  hosts: node1
+  hosts: "{{ HOSTS[0] | default('node1') }}"
   gather_facts: false
 
   vars:
