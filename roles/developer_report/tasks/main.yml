@@ -1,15 +1,15 @@
 ---
-- name: create HTML report
-  become: true
-  template:
-    src: report.j2
-    dest: "{{ file_path }}"
-
 - name: Create a directory if it does not exist
   ansible.builtin.file:
     path: /var/www/html/report
     state: directory
     mode: '0755'
+
+- name: create HTML report
+  become: true
+  template:
+    src: report.j2
+    dest: "{{ file_path }}"
 
 - name: DISPLAY LINK TO INVENTORY REPORT
   debug:
