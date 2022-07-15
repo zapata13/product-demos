@@ -3,13 +3,6 @@
   hosts: "{{ HOSTS | default('web') }}"
   gather_facts: true
 
-- name: Create a directory if it does not exist
-  hosts: "{{ HOSTS | default('web') }}"
-  ansible.builtin.file:
-    path: /var/www/html/report
-    state: directory
-    mode: '0755'
-
 - name: build developer report
   hosts: "{{ HOSTS[0] | default('node1') }}"
   gather_facts: false
